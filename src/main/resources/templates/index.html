@@ -7,32 +7,14 @@
 <h1 class="text-center" id="adlisterTitle">Adlister</h1>
 <h5 class="text-center">Categories</h5>
 
-
 <div class="row">
-    <div class="card col-12 col-sm-6 col-md-5 col-lg-3 border-0 mb-3 shadow d-flex mx-auto" th:each="forum : ${forums}">
-        <a th:href="@{/category/{forumId}(forumId = ${categories.id})}">
-            <div class="card-body">
-                <h5 class="card-title text-center text-capitalize LangTitle" th:text="${forum.name}"></h5>
-            </div>
-
-            <div class="row mx-auto" id="centerImage">
-                <img th:src= "@{'/pics/' +${forum.name} +'.png'}" class="mx-auto" style="height:12rem; padding: 0; display: block; border-radius: 15px;" id="imageId"/>
-            </div>
-            <ul class="list-group list-group-flush">
-
-                <li class="mx-auto btn-block list-group-item text-center text-capitalize La"
-                    th:Text="${forum.getPosts().size()} + ' Posts'" style="font-size: 20px"> </li>
-                <!--        <div style="justify-content: center; display: flex" class="card-body text-center">-->
-                <!--            <h5 class="card-title" th:text="${forum.name}"></h5>-->
-                <!--        </div>-->
-                <!--        <ul style="justify-content: center; display: flex" class="list-group list-group-flush text-center">-->
-                <!--            <li class="list-group-item" th:Text="'Posts '+ ${forum.getPosts().size()}" > </li>-->
-            </ul>
-
-        </a>
+    <div class="col" th:each="Category : ${categories}">
+        <h4 th:text="${Category.name}"></h4>
     </div>
 </div>
-</div>
+
+
+
 
 
 <th:block th:replace="fragments/scripts :: site-scripts"/>

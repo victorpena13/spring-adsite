@@ -16,13 +16,12 @@ public class CategoryController {
         categoryDao = cateogoryRepository;
     }
 
-
-    @GetMapping("/categories/{id}")
-    public String displayCategories(@PathVariable long id, Model vModel) {
-        Category categoryId = categoryDao.findOne(id);
-        Iterable<Category> categories=categoryDao.findAll();
-        vModel.addAttribute("category", categoryId);
+    @GetMapping("/categories")
+    public String viewCategories(Model vModel) {
+        Iterable<Category> categories = categoryDao.findAll();
         vModel.addAttribute("categories", categories);
         return "index";
     }
+
+
 }
