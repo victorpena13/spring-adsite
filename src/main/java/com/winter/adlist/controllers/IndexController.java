@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class IndexController {
 
+
     private final CategoryRepository categoryDao;
     private final AdRepository adDao;
 
@@ -39,6 +40,8 @@ public class IndexController {
         vModel.addAttribute("ads", ads);
         return "site/category";
     }
+
+
 
 }
 
