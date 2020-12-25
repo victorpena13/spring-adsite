@@ -4,5 +4,12 @@
 <body>
 <th:block th:replace="fragments/navbar :: top-nav"/>
 
+
+<div class="row">
+    <div class="col text-center" th:each="Ad : ${ads}">
+        <h4 th:text="${Ad.title}"></h4>
+<!--        <a th:href="@{/categories/{categoryId}(categoryId = ${Category.id})}"><h4 th:text="${Category.name}"></h4></a>-->
+    </div>
+</div>
 </body>
 </html>
