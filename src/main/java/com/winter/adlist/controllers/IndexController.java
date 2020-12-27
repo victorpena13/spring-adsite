@@ -1,7 +1,6 @@
 package com.winter.adlist.controllers;
 
 import com.winter.adlist.models.Ad;
-
 import com.winter.adlist.models.Category;
 import com.winter.adlist.repositories.AdRepository;
 import com.winter.adlist.repositories.CategoryRepository;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class IndexController {
-
 
     private final CategoryRepository categoryDao;
     private final AdRepository adDao;
@@ -40,9 +38,6 @@ public class IndexController {
         vModel.addAttribute("ads", ads);
         return "site/category";
     }
-
-
-
 }
 
 
