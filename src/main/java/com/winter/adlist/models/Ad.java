@@ -18,6 +18,9 @@ public class Ad {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String body;
 
+    @Column(nullable = false)
+    private String price;
+
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="create_date")
@@ -38,9 +41,10 @@ public class Ad {
 
     public Ad() {
     }
-    public Ad(String title, String body, Date createdAt, String photo, User owner, Category categories) {
+    public Ad(String title, String body, String price, Date createdAt, String photo, User owner, Category categories) {
         this.title = title;
         this.body = body;
+        this.price = price;
         this.createdAt = createdAt;
         this.photo = photo;
         this.owner = owner;
@@ -71,6 +75,13 @@ public class Ad {
         this.owner = owner;
     }
 
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
 
     public Date getCreatedAt() {
         return createdAt;
