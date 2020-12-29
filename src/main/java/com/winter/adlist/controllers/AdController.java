@@ -27,7 +27,7 @@ public class AdController {
 
 //creates path for categories to display corresponding posts
     @GetMapping("/ads/{id}")
-    public String showCategories(@PathVariable long id, Model vModel) {
+    public String showAdsInCategories(@PathVariable long id, Model vModel) {
         Category categoryId = categoryDao.findOne(id);
         Iterable <Ad> ads = adDao.findAllByCategoriesOrderByIdDesc(categoryId);
         vModel.addAttribute("category", categoryId);
@@ -36,12 +36,11 @@ public class AdController {
     }
 
     @GetMapping("/ad/{id}")
-    public String showAds(@PathVariable long id, Model vModel) {
-        Category categoryId = categoryDao.findOne(id);
-        Iterable <Ad> ads = adDao.findAllByCategoriesOrderByIdDesc(categoryId);
-        vModel.addAttribute("category", categoryId);
-        vModel.addAttribute("ads", ads);
-        return "site/index";
+    public String showAd(@PathVariable long id, Model vModel) {
+        Ad adId = adDao.findOne(id);
+        vModel.addAttribute("ad", adId);
+        return "site/ad";
+
     }
 
 }

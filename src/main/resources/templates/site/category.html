@@ -8,7 +8,7 @@
 <h1 th:text="${category.name}"></h1>
 <div class="row">
     <div class="col text-center" th:each="Ad : ${ads}">
-        <a th:href="@{/ads/{adId}(adId = ${Ad.id})}"><h4 th:text="${Ad.title}"></h4></a>
+        <a th:href="@{/ad/{adId}(adId = ${Ad.id})}"><h4 th:text="${Ad.title}"></h4></a>
     </div>
 </div>
 </body>
