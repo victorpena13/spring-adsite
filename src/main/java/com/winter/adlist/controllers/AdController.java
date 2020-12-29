@@ -25,7 +25,7 @@ public class AdController {
 
 
 
-//creates path for categories to display corresponding posts
+//creates path for categories to display corresponding adss
     @GetMapping("/ads/{id}")
     public String showAdsInCategories(@PathVariable long id, Model vModel) {
         Category categoryId = categoryDao.findOne(id);
@@ -35,6 +35,7 @@ public class AdController {
         return "site/category";
     }
 
+//creates path to the specific ad
     @GetMapping("/ad/{id}")
     public String showAd(@PathVariable long id, Model vModel) {
         Ad adId = adDao.findOne(id);
