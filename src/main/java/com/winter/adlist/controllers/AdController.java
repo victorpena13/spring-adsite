@@ -10,8 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;;
 
-import javax.servlet.annotation.WebServlet;
-
 @Controller
 public class AdController {
 
@@ -22,8 +20,6 @@ public class AdController {
         categoryDao = categoryRepository;
         adDao = adRepository;
     }
-
-
 
 //creates path for categories to display corresponding adss
     @GetMapping("/ads/{id}")
@@ -43,5 +39,4 @@ public class AdController {
         return "site/ad";
 
     }
-
 }
