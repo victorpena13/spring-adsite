@@ -5,5 +5,11 @@
 <th:block th:replace="fragments/navbar :: top-nav"/>
 <h1 class="text-center">Register</h1>
 
+<form id="signUpForm" th:action="@{/register}" method="post" th:object="${user}">
+
+
+</form>
+
+
 </body>
 </html>

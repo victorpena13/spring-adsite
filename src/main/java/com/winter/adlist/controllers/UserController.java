@@ -13,4 +13,6 @@ public class UserController {
         vModel.addAttribute("user", new User());
         return "user/register";
     }
+
+
 }
