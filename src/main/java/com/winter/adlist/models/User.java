@@ -10,6 +10,9 @@ public class User {
     private long id;
 
     @Column(nullable = false, unique = true)
+    private String username;
+
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
@@ -31,7 +34,8 @@ public class User {
 
     public User(){
     }
-    public User(String email, String password, String firstname, String lastname,  String photo, List<Ad> ad) {
+    public User(String username, String email, String password, String firstname, String lastname,  String photo, List<Ad> ad) {
+        this.username = username;
         this.email = email;
         this.password = password;
         this.firstname = firstname;
@@ -41,6 +45,7 @@ public class User {
     }
     public User(User copy){
         this.id=copy.id;
+        this.username = copy.username;
         this.email = copy.email;
         this.password = copy.password;
         this.firstname = copy.firstname;
@@ -49,12 +54,23 @@ public class User {
         this.ad = copy.ad;
     }
 
+
+
     public long getId() {
         return id;
     }
     public void setId(long id) {
         this.id = id;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getEmail() {
         return email;
     }
