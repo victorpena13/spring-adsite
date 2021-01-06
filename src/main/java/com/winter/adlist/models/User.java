@@ -3,6 +3,9 @@ package com.winter.adlist.models;
 import javax.persistence.*;
 import java.util.List;
 
+
+//user model will allow for a person to login/logout.
+//it will require a unique id
 @Entity
 @Table(name = "users")
 public class User {
@@ -29,8 +32,6 @@ public class User {
 
     @OneToMany(cascade= CascadeType.ALL, mappedBy = "owner" )
     private List<Ad> ad;
-
-
 
     public User(){
     }

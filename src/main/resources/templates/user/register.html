@@ -6,6 +6,7 @@
 <h1 class="text-center">Register</h1>
 
 <form id="signUpForm" th:action="@{/register}" method="post" th:object="${user}">
+    <input class="form-control" id="username" name="username" placeholder="Username" th:field="*{username}"/>
     <input class="form-control" id="email" name="email" placeholder="Email" th:field="*{email}"/>
     <input class="form-control" id="firstname" name="firstname" placeholder="First Name" th:field="*{firstname}"/>
     <input class="form-control" id="lastname" name="lastname" placeholder="Last Name" th:field="*{lastname}"/>
