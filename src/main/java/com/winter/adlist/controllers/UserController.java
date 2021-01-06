@@ -21,7 +21,7 @@ public class UserController {
     }
 
 
-    //Gets the userinput
+    //Gets the user input
     @GetMapping("/register")
     public String registerPage(Model vModel){
         vModel.addAttribute("user", new User());
@@ -49,8 +49,5 @@ public class UserController {
         userDao.save(user);
         return "redirect:/login";
     }
-
-
-
 
 }
