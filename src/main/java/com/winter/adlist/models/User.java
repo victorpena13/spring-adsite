@@ -54,8 +54,6 @@ public class User {
         this.ad = copy.ad;
     }
 
-
-
     public long getId() {
         return id;
     }
