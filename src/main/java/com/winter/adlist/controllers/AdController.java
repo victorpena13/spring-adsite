@@ -39,4 +39,10 @@ public class AdController {
         return "site/ad";
 
     }
+
+
+
+
+
+
 }
