@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
-</head>
+<th:block th:replace="fragments/header :: site-header('Victor Pena')"/>
 <body>
+<th:block th:replace="fragments/navbar :: top-nav"/>
+
+<h2 class="indigo-text" th:text="'Hello, ' + ${user.username} + '!'"/>
 
 
+<h5><strong>Activity: </strong></h5>
+<div th:each ></div>
 
 </body>
 </html>
