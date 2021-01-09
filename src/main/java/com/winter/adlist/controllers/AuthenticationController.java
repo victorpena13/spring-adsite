@@ -29,7 +29,7 @@ public class AuthenticationController {
     @GetMapping("/login")
     public String showLoginForm(Model vModel) {
         vModel.addAttribute("alreadyExists", false);
-        return "user/login";
+        return "site/login";
     }
 
     //retrieves page for user to input new credentials

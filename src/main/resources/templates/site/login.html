@@ -4,7 +4,15 @@
 <body>
 <th:block th:replace="fragments/navbar :: top-nav"/>
 
+<br/>
+<br/>
 <h1>Login</h1>
+
+<form th:action="@{/login}" id="loginForm" method="post">
+    <input type="text" class="form-control" id="username" name="username" placeholder="Username"/>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
+    <button type="submit" class="btn btn-block btn-indigo text-white">Submit</button>
+</form>
 
 
 
