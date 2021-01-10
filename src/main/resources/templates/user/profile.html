@@ -4,11 +4,17 @@
 <body>
 <th:block th:replace="fragments/navbar :: top-nav"/>
 
+
+<br/>
+<br/>
+
 <h2 class="indigo-text" th:text="'Hello, ' + ${user.username} + '!'"/>
 
 
 <h5><strong>Activity: </strong></h5>
-<div th:each ></div>
+<div th:each="ads : ${userAds}">
+    <a th:href="@{/ads/{adId}(adId = ${ads.id})}" th:text="'Category: ' + ${ads.getCategories().getName()}"></a>
+</div>
 
 </body>
 </html>
