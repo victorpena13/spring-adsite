@@ -7,7 +7,6 @@ import com.winter.adlist.repositories.AdRepository;
 import com.winter.adlist.repositories.CategoryRepository;
 import com.winter.adlist.repositories.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,14 +17,12 @@ public class UserController {
 
     private final AdRepository adDao;
     private final UserRepository userDao;
-    private PasswordEncoder passwordEncoder;
     private final CategoryRepository categoryDao;
 
 
-    public UserController(AdRepository adRepository, UserRepository userRepository, PasswordEncoder passwordEncoder, CategoryRepository categoryRepository) {
+    public UserController(AdRepository adRepository, UserRepository userRepository, CategoryRepository categoryRepository) {
         adDao = adRepository;
         userDao = userRepository;
-        this.passwordEncoder = passwordEncoder;
         categoryDao = categoryRepository;
     }
 
