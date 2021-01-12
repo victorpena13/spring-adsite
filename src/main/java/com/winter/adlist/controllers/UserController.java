@@ -47,7 +47,7 @@ public class UserController {
     public String createAdForm(Model vModel) {
         Iterable<Category> categories = categoryDao.findAll();
         vModel.addAttribute("categories", categories);
-        vModel.addAttribute("posts", new Ad());
+        vModel.addAttribute("ads", new Ad());
         return "user/createAd";
     }
 }
