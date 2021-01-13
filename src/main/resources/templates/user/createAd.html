@@ -4,11 +4,25 @@
 <body>
 <th:block th:replace="fragments/navbar :: top-nav"/>
 
+<br/>
+<br/>
 <h1>Create Ad</h1>
-<form th:action="" method="post" th:object="${ads}">
+<form method="post" th:object="${ads}">
+    <label for="categories">Choose Category</label>
+    <select class="form-control" name="category_id" id="categories">
+        <option th:each="category : ${categories}"></option>
+    </select>
+    <label for="title">Title</label>
+    <input class="form-control" type="text" name="title" id="title" placeholder="Title" th:field="*{categories.id}"/>
+    <div>
+        <label for=""></label>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+
+
+
 
 </form>
-
 
 
 

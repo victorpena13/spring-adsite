@@ -41,7 +41,6 @@ public class UserController {
         return "user/profile";
     }
 
-
     //provides users a category to place the ad they are about to create
     @GetMapping("/ads/create")
     public String createAdForm(Model vModel) {
@@ -50,4 +49,6 @@ public class UserController {
         vModel.addAttribute("ads", new Ad());
         return "user/createAd";
     }
+
+    
 }
