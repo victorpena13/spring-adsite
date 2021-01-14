@@ -60,5 +60,5 @@ public class UserController {
         long adid = saveAd.getId();
 
         return "redirect:/ads/" + adid;
-    }d
+    }
 }
