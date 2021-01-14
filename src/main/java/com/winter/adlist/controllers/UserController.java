@@ -10,6 +10,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
@@ -50,5 +52,13 @@ public class UserController {
         return "user/createAd";
     }
 
-    
+    @PostMapping("/ads/create")
+    public String createAd(@ModelAttribute Ad ad) {
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        ad.setOwner(userSession);
+        Ad saveAd = adDao.save(ad);
+        long adid = saveAd.getId();
+
+        return "redirect:/ads/" + adid;
+    }d
 }
