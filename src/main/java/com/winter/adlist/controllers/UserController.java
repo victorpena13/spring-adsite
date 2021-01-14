@@ -58,7 +58,7 @@ public class UserController {
         ad.setOwner(userSession);
         Ad saveAd = adDao.save(ad);
         long adid = saveAd.getId();
-
         return "redirect:/ads/" + adid;
     }
+
 }

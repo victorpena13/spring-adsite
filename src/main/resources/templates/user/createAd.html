@@ -6,24 +6,23 @@
 <br/>
 <br/>
 <h1>Create Ad</h1>
-<form method="post" th:object="${ads}">
-    <label for="categories">Choose Category</label>
-    <select class="form-control" name="category_id" id="categories">
-        <option th:each="category : ${categories}" th:field="*{categories.id}"></option>
+<form th:action="@{/ads/create}" method="post" th:object="${ads}">
+    <label for="category">Choose Category</label>
+    <select class="form-control" name="category_id" id="category">
+        <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
     </select>
     <label for="title">Title</label>
     <input class="form-control" type="text" name="title" id="title" placeholder="Title"/>
     <div>
         <label for="body"></label>
-        <textarea name="body" id="body" cols="30" rows="30"></textarea>
+        <textarea name="body" id="body" cols="60" rows="10"></textarea>
     </div>
     <label for="price">Price</label>
     <input class="form-control" type="text" name="price" id="price" placeholder="Price"/>
     <label for="photo"></label>
-    <input type="text" name="photo" id="photo" placeholder="Photo">
+    <input type="text" name="photo" id="photo" placeholder="Photo"/>
     <button type="submit" class="btn btn-indigo">Submit</button>
 </form>
-
 <th:block th:replace="fragments/scripts :: site-scripts"/>
 </body>
 </html>
