@@ -18,5 +18,7 @@
     <input class="form-control" type="password" id="password" name="password" placeholder="Password" th:field="*{password}"/>
     <button type="submit" class="btn btn-block btn-indigo text-white">Register</button>
 </form>
+
+<th:block th:replace="fragments/scripts :: site-scripts"/>
 </body>
 </html>

@@ -10,5 +10,6 @@
         <a th:href="@{/ad/{adId}(adId = ${Ad.id})}"><h4 th:text="${Ad.title}"></h4></a>
     </div>
 </div>
+<th:block th:replace="fragments/scripts :: site-scripts"/>
 </body>
 </html>

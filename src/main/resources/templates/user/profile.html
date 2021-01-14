@@ -14,5 +14,6 @@
     <a th:href="@{/ads/{adId}(adId = ${ads.id})}" th:text="'Category: ' + ${ads.getCategories().getName()}"></a>
 </div>
 
+<th:block th:replace="fragments/scripts :: site-scripts"/>
 </body>
 </html>
