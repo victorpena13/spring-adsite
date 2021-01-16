@@ -47,6 +47,7 @@ public class UserController {
     @GetMapping("/ads/create")
     public String createAdForm(Model vModel) {
         Iterable<Category> categories = categoryDao.findAll();
+
         vModel.addAttribute("categories", categories);
         vModel.addAttribute("ads", new Ad());
         return "user/createAd";
@@ -60,5 +61,7 @@ public class UserController {
         long adid = saveAd.getId();
         return "redirect:/ads/" + adid;
     }
+
+
 
 }

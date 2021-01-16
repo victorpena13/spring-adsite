@@ -9,10 +9,10 @@
 
 <h2 class="indigo-text" th:text="'Hello, ' + ${user.username} + '!'"/>
 <a href="/ads/create">Generate New Ad</a>
-<h5><strong>Activity: </strong></h5>
-<div th:each="ads : ${userAds}">
-    <a th:href="@{/ads/{adId}(adId = ${ads.id})}" th:text="'Category: ' + ${ads.getCategories().getName()}"></a>
-</div>
+<!--<h5><strong>Activity: </strong></h5>-->
+<!--<div th:each="ad : ${userAds}">-->
+<!--    <a th:href="@{/ads/{adId}(adId = ${ad.id})}" th:text="${ad.getCategories().getName()}"></a>-->
+<!--</div>-->
 
 <th:block th:replace="fragments/scripts :: site-scripts"/>
 </body>
